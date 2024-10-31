@@ -1,35 +1,34 @@
+// App.js
 import React, { useState } from 'react';
-import FormInput from './components/FormInput';
-import ResultsDisplay from './components/ResultsDisplay';
-import BayesianNetwork from './components/BayesianNetwork';
+import ChatBot from './components/ChatBot';
+import './components/WelcomePage.css';
 
 function App() {
-  const [results, setResults] = useState(null);
-  const [networkData, setNetworkData] = useState(null);
+  const [startChat, setStartChat] = useState(false);
 
-  const handleFormSubmit = async (variables) => {
-    try {
-      const response = await fetch('http://localhost:5000/api/bayesian', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(variables),
-      });
-      const data = await response.json();
-      setResults(data.results);
-      setNetworkData(data.network); // Supondo que a rede vem como parte da resposta
-    } catch (error) {
-      console.error("Erro ao chamar a API:", error);
-    }
+  const handleStartChat = () => {
+    setStartChat(true);
   };
 
   return (
     <div className="App">
-      <h1>Interface para Rede Bayesiana</h1>
-      <FormInput onSubmit={handleFormSubmit} />
-      <ResultsDisplay results={results} />
-      {networkData && <BayesianNetwork data={networkData} />}
+      {startChat ? (
+        <ChatBot />
+      ) : (
+        <div className="welcome-container">
+          <div className="welcome-box">
+            <h1 className="welcome-title">Bem-vindo à Avaliação de Crédito</h1>
+            <p className="welcome-text">
+              Pressione o botão abaixo para iniciar sua avaliação de crédito e obter uma resposta rápida.
+            </p>
+            <button className="start-button" onClick={handleStartChat}>Iniciar Chatbot</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
 
 export default App;
+
+
