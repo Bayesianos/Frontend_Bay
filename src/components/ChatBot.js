@@ -14,7 +14,6 @@ function ChatBot({ onComplete }) {
     'Qual é o valor do crédito desejado? (0-999 = 0, 1000-4999 = 1, 5000-9999 = 2, 10000-15000 = 3)',
     'Qual é a duração desejada para o empréstimo em meses? (exemplo: 6, 12, 24, 48)',
     'Qual é o objetivo do crédito? (0 para negócios, 1 para carro, 2 para eletrodomésticos, 3 para educação, 4 para móveis/equipamentos, 5 para rádio/TV, 6 para reparos, 7 para férias/outros)',
-    'Qual é o seu perfil de risco? (0 para ruim, 1 para bom)',
   ], []);
 
   const [step, setStep] = useState(0);
@@ -28,7 +27,6 @@ function ChatBot({ onComplete }) {
     credit_amount: '',
     duration: '',
     purpose: '',
-    risk: '',
   });
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState(null);
@@ -101,7 +99,6 @@ function ChatBot({ onComplete }) {
         credit_amount: Number(formData.credit_amount),
         duration: Number(formData.duration),
         purpose: Number(formData.purpose),
-        risk: Number(formData.risk),
       };
 
       console.log("Dados que serão enviados para a API:", dataToSend);
