@@ -71,26 +71,7 @@ function ChatBot({ onComplete }) {
       return;
     }
 
-    
   
-    // Processamento específico por campo
-    if (currentField === 'age') {
-      if (convertedAnswer <= 17) convertedAnswer = 0;
-      else if (convertedAnswer <= 29) convertedAnswer = 1;
-      else if (convertedAnswer <= 39) convertedAnswer = 2;
-      else if (convertedAnswer <= 49) convertedAnswer = 3;
-      else if (convertedAnswer <= 59) convertedAnswer = 4;
-      else convertedAnswer = 5;
-    } else if (currentField === 'credit_amount') {
-      if (convertedAnswer <= 999) convertedAnswer = 0;
-      else if (convertedAnswer <= 4999) convertedAnswer = 1;
-      else if (convertedAnswer <= 9999) convertedAnswer = 2;
-      else if (convertedAnswer <= 15000) convertedAnswer = 3;
-      else {
-        setErrorMessage('O valor do crédito deve estar entre 0 e 15000.');
-        return;
-      }
-    }
   
     setFormData(prevFormData => ({ ...prevFormData, [currentField]: convertedAnswer }));
   
