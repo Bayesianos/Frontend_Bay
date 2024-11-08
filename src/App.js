@@ -1,19 +1,26 @@
 // App.js
 import React, { useState } from 'react';
-import ChatBot from './components/ChatBot';
+import ChatBot from './components/ChatBot.js';
 import './components/WelcomePage.css';
 
 function App() {
   const [startChat, setStartChat] = useState(false);
 
+  // Função para iniciar o ChatBot
   const handleStartChat = () => {
     setStartChat(true);
+  };
+
+  // Função para reiniciar o ChatBot (caso você deseje adicionar esta funcionalidade)
+  const handleRestartChat = () => {
+    setStartChat(false);
   };
 
   return (
     <div className="App">
       {startChat ? (
-        <ChatBot />
+        // Renderiza o ChatBot e permite reiniciar o fluxo se necessário
+        <ChatBot onRestart={handleRestartChat} />
       ) : (
         <div className="welcome-container">
           <div className="welcome-box">
@@ -30,5 +37,3 @@ function App() {
 }
 
 export default App;
-
-

@@ -2,7 +2,7 @@
 import React from 'react';
 import './ResultScreen.css';
 
-function ResultScreen({ result }) {
+function ResultScreen({ result, onRestart }) {
   return (
     <div className="result-container">
       <div className="result-box">
@@ -10,6 +10,14 @@ function ResultScreen({ result }) {
         <p className="result-text">
           {result === 'approved' ? 'Empréstimo Aprovado!' : 'Empréstimo Negado.'}
         </p>
+        {result === 'approved' ? (
+          <p className="result-details">Parabéns! Você atende aos critérios de aprovação.</p>
+        ) : (
+          <p className="result-details">Infelizmente, você não atende aos critérios de aprovação.</p>
+        )}
+        <button className="restart-button" onClick={onRestart}>
+          Reiniciar Análise
+        </button>
       </div>
     </div>
   );
