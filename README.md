@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Frontend_Bay - Aplicação de Análise de Crédito
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto é o frontend de uma aplicação de análise de crédito desenvolvida para auxiliar na avaliação de risco e aprovação de empréstimos. Ele coleta informações fornecidas pelos usuários, processa as respostas e as envia para um backend que retorna o resultado da análise de crédito.
 
-## Available Scripts
+## Descrição do Projeto
 
-In the project directory, you can run:
+A aplicação possui uma interface de chatbot que guia o usuário através de uma série de perguntas para coletar informações como idade, sexo, tipo de trabalho, situação de moradia, entre outras. Após o preenchimento das informações, os dados são enviados para a API do backend para análise de crédito.
 
-### `npm start`
+## Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React**: Biblioteca para construção da interface de usuário.
+- **CSS**: Estilização da interface.
+- **Fetch API**: Comunicação com o backend para envio de dados e recebimento de respostas.
+- **GitHub Pages** (ou outro serviço de hospedagem de frontend): Hospedagem da aplicação (se aplicável).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Funcionalidades
 
-### `npm test`
+- **Chatbot interativo**: Orienta o usuário através das perguntas.
+- **Validações de entrada**: Garante que os dados fornecidos pelo usuário são válidos antes do envio para a API.
+- **Feedback em tempo real**: Mensagens de erro e notificações são exibidas quando os dados não são válidos ou quando ocorrem falhas na comunicação.
+- **Envio de Dados**: Coleta e envia os dados para a API para processamento.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instalação e Execução
 
-### `npm run build`
+Para rodar o projeto localmente:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone este repositório**:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+git clone https://github.com/SeuUsuario/Frontend_Bay.git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Navegue até o diretório do projeto**:
 
-### `npm run eject`
+cd Frontend_Bay
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Instale as dependências**:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. **Execute a aplicação**:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+npm start
 
-## Learn More
+## Estrutura de Diretórios
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **`src/`**: Contém o código-fonte principal da aplicação.
+- **`components/`**: Componentes reutilizáveis como o `ChatBot` e `ResultScreen`.
+- **`ChatBot.js`**: Componente principal que gerencia o fluxo de perguntas e respostas.
+- **`ResultScreen.js`**: Componente responsável por exibir o resultado da análise.
+- **`LoadingScreen.js`**: Componente que exibe uma tela de carregamento enquanto a análise é processada.
+- **`public/`**: Arquivos públicos e estáticos.
+- **`package.json`**: Arquivo de configuração do projeto, contendo dependências e scripts.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Problemas Conhecidos
 
-### Code Splitting
+- **CORS**: Pode ocorrer erro de CORS ao tentar acessar a API devido a restrições de origem cruzada. Verifique a configuração do backend para garantir que a aplicação frontend tenha permissão de acesso.
+- **Dependências**: Certifique-se de que todas as dependências estão instaladas corretamente para evitar problemas de compilação ou execução.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contribuindo
 
-### Analyzing the Bundle Size
+Se você deseja contribuir para este projeto:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Faça um fork do repositório.
+2. Crie um branch para sua feature (`git checkout -b feature/nova-feature`).
+3. Faça commit das suas alterações (`git commit -m 'Adicionando nova feature'`).
+4. Envie para o branch (`git push origin feature/nova-feature`).
+5. Abra um Pull Request.
 
-### Making a Progressive Web App
+## Licença
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Este projeto está licenciado sob a [MIT License](LICENSE).
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
