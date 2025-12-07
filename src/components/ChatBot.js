@@ -6,14 +6,14 @@ import ResultScreen from './ResultScreen';
 function ChatBot({ onComplete }) {
   const questions = useMemo(() => [
     'Qual é a sua idade?',
-    'Qual é o seu sexo? (Feminino ou Masculino)',
-    'Qual é o seu tipo de trabalho? (Escreva: 0, 1, 2 ou 3)',
-    'Qual é a sua situação de moradia? (Gratuito, Próprio ou Alugado)',
+    'Qual é o seu sexo? (Escreva Feminino ou Masculino)',
+    'Qual é o seu tipo de trabalho? (0, 1, 2 ou 3)',
+    'Qual é a sua situação de moradia? (Gratuito (ex:mora com os pais), Próprio ou Alugado)',
     'Qual é o seu nível de poupança? (Pouco, Moderado, Bastante Rico, Rico ou NA)',
     'Qual é o seu nível de conta corrente? (Pouco, Moderado, Rico ou NA)',
     'Qual é o valor do crédito desejado? (Escreva um número: ex. 1000, 5000)',
     'Qual é a duração desejada para o empréstimo em meses? (exemplo: 6, 12, 24)',
-    'Qual é o objetivo do crédito? (Negócios, Carro, Educação, Outros)',
+    'Qual é o objetivo do crédito? (Negócios, Carro, Educação, Outros...)',
   ], []);
 
   const mappings = {
